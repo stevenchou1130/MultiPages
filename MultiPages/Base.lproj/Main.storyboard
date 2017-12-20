@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MultiPages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIr-UT-KOj">
+                                <rect key="frame" x="117" y="431" width="140" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="To Second Page"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s05-tp-SLq">
+                                <rect key="frame" x="66" y="531" width="242" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="To Without Storyboard View"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peB-Od-qZL">
+                                <rect key="frame" x="122.5" y="329" width="129" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="To Segue Page"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sIr-UT-KOj" firstAttribute="top" secondItem="peB-Od-qZL" secondAttribute="bottom" constant="66" id="MaT-sT-dOd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sIr-UT-KOj" secondAttribute="bottom" constant="200" id="Shp-yt-I7n"/>
+                            <constraint firstItem="peB-Od-qZL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VRs-zl-0IO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s05-tp-SLq" secondAttribute="bottom" constant="100" id="ZWI-yn-Ldx"/>
+                            <constraint firstItem="sIr-UT-KOj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="y1f-kg-M6H"/>
+                            <constraint firstItem="s05-tp-SLq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ygW-pg-Hma"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="secondPageBtn" destination="sIr-UT-KOj" id="G7f-uL-icI"/>
+                        <outlet property="segueBtn" destination="peB-Od-qZL" id="hXb-uQ-6Rn"/>
+                        <outlet property="withoutStoryboardViewBtn" destination="s05-tp-SLq" id="VOi-yK-FbT"/>
+                        <segue destination="ub6-9m-tQf" kind="show" identifier="goSeguePage" id="Nj6-wj-luz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="114.69265367316342"/>
+        </scene>
+        <!--Segue Page View Controller-->
+        <scene sceneID="fI4-TE-gZJ">
+            <objects>
+                <viewController storyboardIdentifier="SeguePageViewController" id="ub6-9m-tQf" customClass="SeguePageViewController" customModule="MultiPages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6r3-E2-VmD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcG-Uj-1AP">
+                                <rect key="frame" x="170" y="437" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backToMainPage:" destination="ub6-9m-tQf" eventType="touchUpInside" id="8yQ-es-rZn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M65-Pb-8bh">
+                                <rect key="frame" x="159.5" y="86" width="56" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlQ-hA-Uvg">
+                                <rect key="frame" x="138" y="363" width="99" height="30"/>
+                                <state key="normal" title="Unwind Segue"/>
+                                <connections>
+                                    <action selector="toMainPageViaUnwind:" destination="ub6-9m-tQf" eventType="touchUpInside" id="bd2-k2-W05"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mcG-Uj-1AP" firstAttribute="centerX" secondItem="zZ9-U8-ypX" secondAttribute="centerX" id="0Sj-j1-8SB"/>
+                            <constraint firstItem="mcG-Uj-1AP" firstAttribute="top" secondItem="mlQ-hA-Uvg" secondAttribute="bottom" constant="44" id="AAk-s3-eYE"/>
+                            <constraint firstItem="M65-Pb-8bh" firstAttribute="top" secondItem="zZ9-U8-ypX" secondAttribute="top" constant="66" id="Cnd-WC-CwD"/>
+                            <constraint firstItem="M65-Pb-8bh" firstAttribute="centerX" secondItem="zZ9-U8-ypX" secondAttribute="centerX" id="Yac-dH-HEr"/>
+                            <constraint firstItem="zZ9-U8-ypX" firstAttribute="bottom" secondItem="mcG-Uj-1AP" secondAttribute="bottom" constant="200" id="bFv-fN-zdS"/>
+                            <constraint firstItem="mlQ-hA-Uvg" firstAttribute="centerX" secondItem="zZ9-U8-ypX" secondAttribute="centerX" id="h8i-60-yEQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zZ9-U8-ypX"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="M65-Pb-8bh" id="cHi-rr-ULL"/>
+                        <segue destination="97F-hg-twI" kind="unwind" identifier="unwindSegue" unwindAction="unwindToMainPageWithSegue:" id="1on-Bq-Drh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRh-i6-emM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="97F-hg-twI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="997.60000000000002" y="114.69265367316342"/>
+        </scene>
+    </scenes>
+</document>
